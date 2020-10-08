@@ -31,6 +31,24 @@ const Search = () => {
     //   console.log(res);
     // });
   }, [term]);
+  const renderedResults = results.map((result) => {
+    return (
+      <div key={result.pageid} className="item">
+        <div className="right floated content">
+          <a
+            href={`https://en.wikipedia.org?curid=${result.pageid}`}
+            className="ui button"
+          >
+            GO
+          </a>
+        </div>
+        <div className="content">
+          <div className="header">{result.title}</div>
+          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
+        </div>
+      </div>
+    );
+  });
   return (
     <div>
       <div className="ui form">
@@ -44,6 +62,7 @@ const Search = () => {
           />
         </div>
       </div>
+      <div className="ui celled list">{renderedResults}</div>
     </div>
   );
 };
