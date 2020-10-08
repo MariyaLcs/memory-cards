@@ -6,7 +6,6 @@ const Search = () => {
   const [results, setResults] = useState([]);
   console.log(results);
   useEffect(() => {
-    //1 way - create a helper fn
     const search = async () => {
       const { data } = await axios.get("https://en.wikipedia.org/w/api.php", {
         params: {
@@ -23,16 +22,10 @@ const Search = () => {
       if (term) {
         search();
       }
-    }, 2000);
-
-    //2 way
-    // (async () => {
-    //   await axios.get("");
-    // })();
-    //3 way
-    // axios.get("adf").then((res) => {
-    //   console.log(res);
-    // });
+    }, 1500);
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [term]);
   const renderedResults = results.map((result) => {
     return (
