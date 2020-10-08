@@ -19,9 +19,12 @@ const Search = () => {
       });
       setResults(data.query.search);
     };
-    if (term) {
-      search();
-    }
+    const timeoutId = setTimeout(() => {
+      if (term) {
+        search();
+      }
+    }, 2000);
+
     //2 way
     // (async () => {
     //   await axios.get("");
