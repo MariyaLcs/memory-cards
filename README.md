@@ -5,3 +5,4 @@
 3. Wikipedia API
    https://en.wikipedia.org/w/api.php
 4. throttling API request with setTimeout
+5. useRef()
