@@ -11,18 +11,24 @@ const App = () => {
     { title: "Dreams", content: "What are your plans for the next year?" },
   ];
   const options = [
-    { label: "London", value: "option1" },
-    { label: "Moscow", value: "option2" },
-    { label: "Tokio", value: "option3" },
+    { label: "London", value: "London" },
+    { label: "Moscow", value: "Moscow" },
+    { label: "Tokio", value: "Tokio" },
   ];
   const [selected, setSelected] = useState(options[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div>
-      <Dropdown
-        options={options}
-        selected={selected}
-        onSelectedChange={setSelected}
-      />
+      <button onClick={() => setShowDropdown(!showDropdown)}>
+        Toggle Dropdown
+      </button>
+      {showDropdown && (
+        <Dropdown
+          options={options}
+          selected={selected}
+          onSelectedChange={setSelected}
+        />
+      )}
     </div>
   );
 };
