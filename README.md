@@ -7,3 +7,4 @@
 4. throttling API request with setTimeout
 5. useRef()
 6. npm i react-scripts axios
+7. Header -> Link ---- Navigation Event -> Route -> Accordion/Search/Dropdown/Translate
