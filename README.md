@@ -1,4 +1,4 @@
-### Main Parts of the course project
+### Milestones from the course project
 
 1. useState()
 2. useEffect()
